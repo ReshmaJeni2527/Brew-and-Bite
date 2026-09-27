@@ -1,0 +1,116 @@
+.hero {
+  padding: 56px 0 100px;
+  background:
+    radial-gradient(60% 50% at 85% 0%, rgba(201, 134, 45, 0.14), transparent 60%),
+    var(--cream);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero__kicker {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--rust);
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+.hero__text h1 {
+  font-size: clamp(2.6rem, 5vw, 3.9rem);
+  letter-spacing: -0.01em;
+}
+
+.hero__text h1 span { color: var(--rust); }
+
+.hero__desc {
+  margin-top: 24px;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.hero__stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.hero__stats div { display: flex; flex-direction: column; gap: 4px; }
+
+.hero__stats strong {
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  color: var(--espresso);
+}
+
+.hero__stats span { font-size: 0.85rem; color: var(--ink-soft); }
+
+.hero__media {
+  position: relative;
+  justify-self: center;
+}
+
+.hero__img-main {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 140px 140px 20px 20px;
+  box-shadow: var(--shadow);
+}
+
+.hero__img-small {
+  position: absolute;
+  bottom: -36px;
+  left: -48px;
+  width: 190px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid var(--cream);
+  box-shadow: var(--shadow);
+}
+
+.hero__badge {
+  position: absolute;
+  top: 18px;
+  right: -18px;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: var(--espresso);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(8deg);
+}
+
+.hero__badge-num { font-size: 0.7rem; letter-spacing: 0.04em; }
+.hero__badge-year { font-family: var(--serif); font-size: 1.15rem; }
+
+@media (max-width: 980px) {
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__media { margin-top: 20px; }
+  .hero__img-small { left: 0; }
+}
+
+@media (max-width: 520px) {
+  .hero__stats { gap: 24px; flex-wrap: wrap; }
+  .hero__img-main { border-radius: 80px 80px 16px 16px; }
+}

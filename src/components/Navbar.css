@@ -1,0 +1,120 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: transparent;
+  transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+  padding: 22px 0;
+}
+
+.navbar--scrolled {
+  background: rgba(250, 243, 231, 0.94);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px -20px rgba(42, 24, 16, 0.4);
+  padding: 14px 0;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar__brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--espresso);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.navbar__brand-name {
+  font-family: var(--serif);
+  font-size: 1.28rem;
+  font-weight: 600;
+  color: var(--espresso);
+}
+
+.navbar__links--desktop {
+  display: flex;
+  gap: 30px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.navbar__links--desktop a {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.navbar__links--desktop a:hover { color: var(--rust); }
+
+.navbar__cta { padding: 11px 24px; font-size: 0.88rem; }
+
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+}
+
+.navbar__toggle span {
+  height: 2px;
+  width: 100%;
+  background: var(--espresso);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar__toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar__toggle.is-open span:nth-child(2) { opacity: 0; }
+.navbar__toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.navbar__links--mobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .navbar__links--desktop, .navbar__cta { display: none; }
+  .navbar__toggle { display: flex; }
+
+  .navbar__links--mobile {
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--cream);
+    transition: max-height 0.35s ease;
+  }
+
+  .navbar__links--mobile.is-open {
+    max-height: 480px;
+    border-top: 1px solid var(--line);
+  }
+
+  .navbar__links--mobile a {
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--line);
+    font-weight: 500;
+  }
+
+  .navbar__links--mobile .btn {
+    margin: 18px 22px;
+    justify-content: center;
+  }
+}

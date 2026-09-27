@@ -1,0 +1,115 @@
+.reservation { background: var(--espresso); color: var(--cream); }
+
+.reservation__inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+}
+
+.reservation .kicker { color: var(--amber); }
+.reservation h2 { color: var(--cream); font-size: clamp(1.9rem, 3vw, 2.5rem); }
+
+.reservation__desc {
+  margin-top: 18px;
+  color: rgba(250, 243, 231, 0.72);
+  max-width: 46ch;
+}
+
+.reservation__facts {
+  list-style: none;
+  margin: 44px 0 0;
+  padding: 0;
+}
+
+.reservation__facts li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(250, 243, 231, 0.18);
+  font-size: 0.95rem;
+}
+
+.reservation__facts li:last-child { border-bottom: 1px solid rgba(250, 243, 231, 0.18); }
+
+.reservation__facts span { color: rgba(250, 243, 231, 0.65); }
+
+.reservation__form {
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: var(--radius-m);
+  padding: 40px;
+  box-shadow: var(--shadow);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--espresso);
+}
+
+.form-field input,
+.form-field select {
+  font-family: var(--sans);
+  font-size: 0.96rem;
+  padding: 12px 14px;
+  border-radius: var(--radius-s);
+  border: 1.5px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: var(--rust);
+}
+
+.form-field input[aria-invalid="true"],
+.form-field select[aria-invalid="true"] {
+  border-color: #b23b2e;
+}
+
+.form-error {
+  font-size: 0.8rem;
+  color: #b23b2e;
+}
+
+.reservation__submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
+  font-size: 1rem;
+  padding: 15px 30px;
+}
+
+.reservation__success {
+  background: rgba(110, 122, 87, 0.15);
+  border: 1px solid var(--sage);
+  color: #3f4a2c;
+  padding: 14px 16px;
+  border-radius: var(--radius-s);
+  font-size: 0.92rem;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 980px) {
+  .reservation__inner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 560px) {
+  .form-row { grid-template-columns: 1fr; }
+  .reservation__form { padding: 28px 22px; }
+}
